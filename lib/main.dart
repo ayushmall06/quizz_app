@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'constants.dart';
+import 'quizscreen.dart';
+import 'result_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,7 +34,7 @@ class HomePage extends StatelessWidget {
       )
     );
     return Scaffold(
-      backgroundColor: Color(0xFF2D046E),
+      backgroundColor: kPrimaryBackgroundColor,
       body: Container(
         child: SingleChildScrollView(
           child: Column(
@@ -64,7 +67,15 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     color: Color(0xFFFFBA00),
-                    onPressed: () {},
+                    onPressed: () {
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => QuizScreen(),
+                        )
+                      );
+                    },
                     textColor: Colors.white,
 
                   ),
